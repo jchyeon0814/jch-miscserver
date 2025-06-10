@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 import logging
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from rest_framework.response import Response 
 @api_view(['GET'])
 def weather_api(request):
     logger = logging.getLogger(__name__)
