@@ -6,13 +6,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from external.services import weather_services
-from external.schemas.weather_models import WeatherRequestParams
+from external.schemas.weather_models import WeatherFcstRequestParams
 
 @api_view(['GET'])
 def weather_api(request):
     logger = logging.getLogger(__name__)
     
-    params = WeatherRequestParams(**{
+    params = WeatherFcstRequestParams(**{
         "page_no": "1",
         "num_of_rows": "1000",
         "base_date": "20250610",

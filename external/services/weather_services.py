@@ -1,14 +1,14 @@
 import requests
-from external.schemas.weather_models import WeatherRequestParams, WeatherFcst
+from external.schemas.weather_models import WeatherFcstRequestParams, WeatherFcst
 from typing import List
-import xmltodict
+from django.conf import settings
 
 BASE_URL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
-service_key = "wQMVHtGXp9X3dziATpeU7zZAIWlDgzW1Ah3TE+kKZWqELsFbjo0tq4/FinbWGcMuIGMAsOplkak6WmY4viIM1Q=="
 
-def get_weather_data(params: WeatherRequestParams) -> List[WeatherFcst]:
+
+def get_weather_data(params: WeatherFcstRequestParams) -> List[WeatherFcst]:
     request_params = params=params.to_params()
-    request_params["serviceKey"] = service_key
+    request_params["serviceKey"] = settings.DATA_GO_KR_API_SERVICE_KEY
     
     response = requests.get(BASE_URL, request_params)
     response.raise_for_status()

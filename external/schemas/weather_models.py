@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 @dataclass
-class WeatherRequestParams:
+class WeatherFcstRequestParams:
     base_date: str
     base_time: str
     nx: int
