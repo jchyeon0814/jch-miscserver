@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import hello_api
+from .views import forcast_api
 
 urlpatterns = [
-    path('api/hello/', hello_api),
+    path('api/forcast/', forcast_api),
 ]
