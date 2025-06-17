@@ -10,7 +10,7 @@ import requests
 # Create your views here.
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from common.response import api_response
+from common.migrations.utils.response import api_response
 
 @api_view(['GET'])
 def weather_api(request):

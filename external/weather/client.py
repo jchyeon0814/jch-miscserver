@@ -1,9 +1,8 @@
-from dataclasses import asdict
 from typing import List
 
 import requests
 from external.weather.endpoints import SHORT_TERM_WEATHER_URL
-from miscserver import settings
+from core import settings
 from external.weather.schemas import ShortTermWeatherRequestParams, ShortTermWeather
 
 
