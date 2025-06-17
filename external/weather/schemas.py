@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 @dataclass
-class ShortTermForcastRequestParams:
+class ShortTermWeatherRequestParams:
     base_date: str
     base_time: str
     nx: int
@@ -23,7 +23,7 @@ class ShortTermForcastRequestParams:
         }
 
 @dataclass
-class ShortTermForcast:
+class ShortTermWeather:
     baseDate: str
     baseTime: str
     category: str

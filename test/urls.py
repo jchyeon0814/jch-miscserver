@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import forcast_api
+from .views import weather_api
 
 urlpatterns = [
-    path('api/forcast/', forcast_api),
+    path('api/weather/', weather_api),
 ]
