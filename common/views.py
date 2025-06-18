@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView
+from rest_framework.viewsets import ModelViewSet
+from .models import *
+from .serializers import *
 
-# Create your views here.
+class AdminRegionViewSet(ModelViewSet):
+    queryset = AdminRegion.objects.all()
+    serializer_class = AdminRegionSerializer

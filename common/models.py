@@ -1,6 +1,6 @@
 from django.db import models
 
-class AdministrativeRegion(models.Model):
+class AdminRegion(models.Model):
     region_code = models.CharField(max_length=10, primary_key=True)
     level_1 = models.CharField(max_length=50)
     level_2 = models.CharField(max_length=50, null=True)
@@ -18,4 +18,4 @@ class AdministrativeRegion(models.Model):
     location_updated = models.DateTimeField()
     
     class Meta:
-        db_table = 'administrative_region'
+        db_table = 'admin_region'
