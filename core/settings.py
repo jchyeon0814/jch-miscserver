@@ -140,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
-        'common.renderers.CustomJSONRenderer',
+        'common.utils.renderers.CustomJSONRenderer',
     ),
-    'EXCEPTION_HANDLER': 'common.utils.response.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'common.utils.exceptions.custom_exception_handler',
 }
