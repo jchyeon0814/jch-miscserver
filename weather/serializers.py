@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from weather.models import AdminRegion
 
 class AdminRegionSerializer(serializers.ModelSerializer):
     class Meta:

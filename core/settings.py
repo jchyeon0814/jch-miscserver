@@ -43,6 +43,7 @@ CORS_ALLOWED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'weather',
     'common',
     'test',
     'rest_framework',
@@ -140,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
-        'common.utils.renderers.CustomJSONRenderer',
+        'core.utils.response.CustomJSONRenderer',
     ),
-    'EXCEPTION_HANDLER': 'common.utils.exceptions.custom_exception_handler',
+    'EXCEPTION_HANDLER': 'core.utils.response.custom_exception_handler',
 }

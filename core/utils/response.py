@@ -1,4 +1,28 @@
+from rest_framework.views import exception_handler
 from rest_framework.renderers import JSONRenderer
+
+def custom_exception_handler(exc, context):
+    response = exception_handler(exc, context)
+
+    if response is not None:
+        result_code = getattr(exc, 'result_code', response.status_code)
+
+        if hasattr(exc, 'detail'):
+            if isinstance(exc.detail, (dict, list)):
+                result_msg = exc.detail
+            else: 
+                result_msg = str(exc.detail)
+        else:
+            result_msg = str(exc)
+
+
+        response.data = {
+            "resultCode": result_code,
+            "resultMsg": result_msg,
+            "data": None
+        }
+
+    return response
 
 class CustomJSONRenderer(JSONRenderer):
     def get_indent(self, *args, **kwargs):
